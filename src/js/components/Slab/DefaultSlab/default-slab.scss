@@ -1,0 +1,10 @@
+.slab {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (min-width: 767px) {
+        min-height: 150px;
+    }
+}

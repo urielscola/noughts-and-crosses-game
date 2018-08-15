@@ -1,0 +1,70 @@
+$grid-width: 2px;
+$grid-color: #796590;
+
+.board-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.board {
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 55px;
+    max-width: 750px;
+
+    > li {
+        width: 33%;
+    }
+
+    .board-grid {
+        position: absolute;
+        background: $grid-color;
+        display: block;
+        transition: 450ms ease;
+
+        &.first {
+            width: $grid-width;
+            height: 0;
+            left: 33%;
+            bottom: 0;
+        }
+
+        &.second {
+            width: $grid-width;
+            height: 0;
+            left: 66%;
+            top: 0;
+        }
+
+        &.third {
+            width: 0;
+            height: $grid-width;
+            right: 0;
+            top: 33%;
+        }
+
+        &.fourth {
+            width: 0;
+            height: $grid-width;
+            left: 0;
+            top: 66%;
+        }
+    }
+
+    &.loaded {
+        .board-grid {
+
+            &.first, &.second {
+                height: 100%;
+            }
+
+            &.third, &.fourth {
+                width: 100%;
+            }
+        }
+    }
+}
